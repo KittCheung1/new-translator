@@ -20,18 +20,18 @@ function Translator() {
     }
     const onBtnClick = (event) => {
         setClick(true)
-            translate()
+        translate()
 
     }
 
     const translate = () => {
         let result = [];
         let arr = wordlist.split('');
-        const alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]; 
-        
-           
+        const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+
         for (let index = 0; index < arr.length; index++) {
-            
+
             let position = alphabet.indexOf(arr[index].toLowerCase());
             result.push(pictures[position]);
 
@@ -40,7 +40,7 @@ function Translator() {
         // PROBLEM HERE - we try to store our result array within a useState hook but when we try to log it out it returns empty.
         console.log(result);
         setImg(result);
-         console.log(translatedImg);
+        console.log(translatedImg);
     }
 
     return (
@@ -54,8 +54,9 @@ function Translator() {
                         <input className="TransInput" type="text" value={text} onChange={handleOnChange} placeholder="Text to translate" ></input>
                         <br></br>
                         <br></br>
-                        <button id="btn" onClick={onBtnClick}>Translate</button>
-
+                        <div>
+                            <button id="btn" onClick={onBtnClick}>Translate</button>
+                        </div>
                         <br></br>
                         <br></br>
                         <br></br>

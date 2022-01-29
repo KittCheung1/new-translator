@@ -1,4 +1,4 @@
-#box{
+#box {
     margin-top: 20px;
     margin-left: 20px;
 }
@@ -14,13 +14,14 @@ fieldset {
     border-width: 8px;
     background-color: rgb(205, 201, 241);
 }
+
 h1 {
     text-align: left;
     background-color: chocolate;
     margin: 0;
 }
 
-input{
+input {
     font-size: 25px;
 }
 
@@ -39,6 +40,7 @@ legend {
     border-radius: 5px;
     background-color: coral;
     padding: 10px;
-    margin-left: 70%;
+    float: right;
     font-size: 20px;
+    width: fit-content;
 }
