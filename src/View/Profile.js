@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import UserList from "../components/UserList";
+import { useState } from "react";
 
 const Profile = () => {
     const apiURL = 'https://trivia-game-noroff-api.herokuapp.com/translations'
-    const [userProfile, setUserProfile] = useState([""])
+    const [userProfile, setUserProfile] = useState([])
     const navigate = useNavigate();
 
     const startPage = () => {
@@ -12,24 +14,21 @@ const Profile = () => {
     async function getUser(id) {
         const response = await fetch(`${apiURL}/${id}`);
         const data = await response.json();
-        setUserProfile((data))
+        setUserProfile((data));
+        console.log(data);
     }
 
 
 
 
     return (
-        <div>
+        <div className="Profile">
             <fieldset >
                 <legend>Your latest translations </legend>
-                    <div id="divBox">
-                    <p></p>
-                    <button type="button" className="btn" onClick={startPage}>Back to Login</button>
-                    </div>
+                <UserList userProfile={userProfile} />
+                <button type="button" className="btn" onClick={startPage}>Back to Login</button>
             </fieldset>
-
         </div>
-
     )
 }
 
