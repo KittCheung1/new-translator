@@ -4,7 +4,14 @@ import { useState } from "react";
 
 const Profile = () => {
     const apiURL = 'https://trivia-game-noroff-api.herokuapp.com/translations'
-    const [userProfile, setUserProfile] = useState([])
+    const [userProfile, setUserProfile] = useState([{
+        id: 1,
+        username: "kitt",
+        translations: [
+          "hello world",
+          "react is fun"
+        ]
+    }])
     const navigate = useNavigate();
 
     const startPage = () => {

@@ -7,7 +7,7 @@ return (
         {userProfile.map((user) => (
             <div className="user-preview" key={user.id}>
                 <p>{user.username}</p>
-                <p>{user.translation}</p>
+                <p>{user.translations}</p>
             </div>
         ))}
     </div>
